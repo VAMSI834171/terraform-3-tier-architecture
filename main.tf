@@ -135,10 +135,10 @@ resource "aws_route_table_association" "b" {
 
 #Create EC2 Instance
 resource "aws_instance" "wnewkperver1" {
-  ami                    = "ami-0d5eff06f840b45e9"
+  ami                    = "ami-0e54eba7c51c234f6"
   instance_type          = "t2.micro"
   availability_zone      = "us-east-1a"
-  key_name               = "newkp"
+  key_name               = "vp12"
   vpc_security_group_ids = [aws_security_group.wnewkperver-sg.id]
   subnet_id              = aws_subnet.web-subnet-1.id
   user_data              = "${file("apache.sh")}"
@@ -149,10 +149,10 @@ resource "aws_instance" "wnewkperver1" {
 }
 
 resource "aws_instance" "wnewkperver2" {
-  ami                    = "ami-0d5eff06f840b45e9"
+  ami                    = "ami-0e54eba7c51c234f6"
   instance_type          = "t2.micro"
   availability_zone      = "us-east-1b"
-  key_name               = "newkp"
+  key_name               = "vp12"
   vpc_security_group_ids = [aws_security_group.wnewkperver-sg.id]
   subnet_id              = aws_subnet.web-subnet-2.id
   user_data              = "${file("apache.sh")}"
@@ -167,7 +167,7 @@ resource "aws_instance" "appserver1" {
   ami                    = "ami-0d5eff06f840b45e9"
   instance_type          = "t2.micro"
   availability_zone      = "us-east-1a"
-  key_name               = "newkp"
+  key_name               = "vp12"
   vpc_security_group_ids = [aws_security_group.appserver-sg.id]
   subnet_id              = aws_subnet.application-subnet-1.id
   tags = {
@@ -179,7 +179,7 @@ resource "aws_instance" "appserver2" {
   ami                    = "ami-0d5eff06f840b45e9"
   instance_type          = "t2.micro"
   availability_zone      = "us-east-1b"
-  key_name               = "newkp"
+  key_name               = "vp12"
   vpc_security_group_ids = [aws_security_group.appserver-sg.id]
   subnet_id              = aws_subnet.application-subnet-2.id
 
@@ -361,7 +361,7 @@ output "lb_dns_name" {
 
 
 resource "aws_s3_bucket" "example" {
-  bucket = "pipleinbucket0088bdhuwtrrr"
+  bucket = "pipleinbucket22212bdhuwtrrr"
 }
 
 
